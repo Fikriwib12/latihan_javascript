@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const jmlMatkul = 3
+
+        let matkul_1
+        let matkul_2
+        let matkul_3
+        let total   
+        let rataRata
+        let nilai
+        let predikat
+
+        matkul_1 = parseInt(prompt('Masukan nilai matkul 1 :'))
+        matkul_2 = parseInt(prompt('Masukan nilai matkul 2 :'))
+        matkul_3 = parseInt(prompt('Masukan nilai matkul 3 :'))
+
+        total = matkul_1 + matkul_2 + matkul_3
+        rataRata = total/jmlMatkul
+
+        console.log('nilai ujian')
+        console.log('Nilai Rata - Rata :'+ rataRata)
+
+        if (rataRata > 70)  {
+            console.log('Anda  lulus')
+        } else{
+            console.log('Anda Tidak lulus')
+        }
+
+
+        if (rataRata > 80) {
+            nilai = "A"
+        } else if (rataRata > 60) {
+           nilai = "B"
+        } else if (rataRata > 50){
+            nilai = 'C'
+        } else {
+            nilai = 'D'
+        }
+
+        console.log("Nilai anda :" , nilai)
+
+
+        switch (nilai) {
+            case 'A':
+                predikat = 'Cumlaude'
+                break;
+            case 'B':
+                predikat = 'Memuaskan'
+        
+            default:
+                predikat = 'Biasa aja'
+                break;
+        }
+
+        console.log('Predikat Anda : ' + predikat)
+    </script>
+</body>
+</html>
