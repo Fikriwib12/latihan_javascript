@@ -7,6 +7,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <title>Belajar Tailwind</title>
+     <style type="text/tailwindcss">
+        #toggle:checked ~ label div.toggle-circle {
+            @apply translate-x-3;
+        }
+    </style>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -55,5 +60,20 @@
         <blockquote class="mb-4 italic font-thin">"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio, eos repudiandae ab eaque rem ipsam, minima voluptatem corrupti necessitatibus nihil fugiat illum facilis possimus vel quia culpa eligendi cum"</blockquote>
         <p class="mb-4">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur dolores consectetur eos. Eum, voluptate repellendus, nesciunt possimus dolores natus sint enim eaque eius sequi corporis magni labore minus nostrum totam porro, non dolorum ea! Temporibus, fugit? Alias quaerat sequi dolorum voluptatem ad necessitatibus?</p>
     </section>
+
+
+    <div class="flex justify-center">
+        <span class="text-sm text-slate-500 mr-2">Light</span>
+        <input type="checkbox" id="toggle" class="hidden">
+        <label for="toggle">
+            <div class="w-9 h-5 bg-slate-500 rounded-full flex items-center p-1 cursor-pointer">
+                <div class="w-4 h-4 bg-white rounded-full toggle-circle"></div>
+            </div>
+        </label>
+        <span class="text-sm text-slate-500 ml-2">Dark</span>
+    </div>
+
+
+
 </body>
 </html>
