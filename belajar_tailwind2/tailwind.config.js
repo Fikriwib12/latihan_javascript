@@ -2,7 +2,18 @@
 module.exports = {
   content: ['index.html'],
   theme: {
-    extend: {},
+    darkMode:'class',
+    extend: {
+      spacing: {
+        13 : '3.25rem',
+    },
+    fontFamily:{
+        inter: ['Inter']
+    },
+    colors:{
+        fkc : '#bada55'
+    },
+    },
   },
   plugins: [],
 }
