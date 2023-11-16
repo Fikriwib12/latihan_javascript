@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -75,11 +75,51 @@
         </form>
     </div>
 
+    <hr class="my-20">
+
+    <div class="w-40 h-40 bg-sky-500 mx-auto rounded-lg shadow-lg  hover:rotate-180 transition hover:bg-pink-500 origin-top-left"></div>
+
+    <div class="w-40 h-40 mx-auto mt-20 group">
+        <div class="w-full h-full bg-sky-500 rounded-lg shadow-lg group-hover:rotate-180 origin-top-left transition duration-1000 "></div>
+    </div>
+
+
+    <div class="w-40 h-40 bg-pink-500 mx-auto rounded-lg shadow-lg my-20 animate-goyang"></div>
+
+    <hr class="my-20 border-t-4">
+
+    <div class="container px-8 mx-auto">
+        <div class="border rounded-lg shadow-lg p-10 relative">
+            <div class="w-10 h-10 bg-sky-200 rounded-full flex fixed bottom-5 right-5 cursor-pointer"><a href="#" class="text-xl m-auto">🔝</></div>
+            <img src="./asset/1.jpg" alt="games" width="150" class="float-left mr-3">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro odio praesentium delectus aperiam in magnam recusandae dolorum laborum cumque quasi? Nulla aspernatur, porro voluptas accusantium beatae quasi reprehenderit minus nesciunt necessitatibus maxime consequuntur vitae suscipit doloribus qui laudantium assumenda doloremque. Sed, in repudiandae nobis cum nulla odit iure officiis consequatur iste, alias error quibusdam ipsum ullam neque doloremque cumque molestiae excepturi aperiam commodi eos eaque perspiciatis maiores. Voluptatum natus id, adipisci, sunt quae consequatur itaque doloremque explicabo ex culpa quasi voluptas sed dolores totam, in ad voluptatem? Quae alias ea quibusdam iste fuga, assumenda quasi rem illum magnam dolore dolor.</p>
+        </div>
+    </div>
+
+
+    <div class="border rounded-lg shadow-lg p-10 container mx-auto mt-20 columns-4 ">
+        <img src="https://source.unsplash.com/600x400" alt="img" class="mb-4">
+        <img src="https://source.unsplash.com/600x400" alt="img" class="mb-4">
+        <img src="https://source.unsplash.com/600x400" alt="img" class="mb-4">
+        <img src="https://source.unsplash.com/600x400" alt="img" class="mb-4">
+        <img src="https://source.unsplash.com/600x400" alt="img"class="mb-4">
+        <img src="https://source.unsplash.com/600x400" alt="img"class="mb-4">
+    </div>
+
     <div class="mb-96">
 
     </div>
 
 
-   
+   <script>
+    const checkbox = document.querySelector('#toggle')
+
+    const html = document.querySelector('html')
+
+    checkbox.addEventListener('click', function()
+    {
+        checkbox.checked ? html.classList.add('dark') : html.classList.remove('dark')
+    })
+   </script>
 </body>
 </html>
