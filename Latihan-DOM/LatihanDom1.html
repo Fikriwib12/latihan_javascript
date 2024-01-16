@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan DOM 1</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        .biru-muda{
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bermain Dengan Warna</h1>
+    <button id="btnUbahWarna">Ubah Warna</button>
+    <input type="color">
+
+<script>
+    const btnUbahWarna = document.getElementById('btnUbahWarna')
+
+    btnUbahWarna.onclick = function(){
+        // document.body.style.backgroundColor = 'red'
+        document.body.classList.toggle('biru-muda')
+    }
+
+    const colorPickerBg = document.querySelector('input[type=color]')
+    colorPickerBg.addEventListener('change', function(){
+        const colorBg = colorPickerBg.value
+
+        document.body.style.backgroundColor = colorBg
+    })
+
+</script>
+</body>
+</html>
