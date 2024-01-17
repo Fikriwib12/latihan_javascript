@@ -145,3 +145,18 @@ img {
 .gajah:active, .semut:active, .orang:active {
     top: 2px;
 }
+
+.score-comp{
+    font-size: 20px;
+    font-weight: bold;
+    color:white;
+    margin-left:10px;
+}
+
+.score-player {
+    font-size: 20px;
+    font-weight: bold;
+    color:white;
+    margin-left:10px;
+    padding-top:10px;
+}

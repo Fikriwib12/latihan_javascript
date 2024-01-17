@@ -13,7 +13,7 @@ function getHasil(comp, player){
     if( player == comp ) return 'SERI!';
     if( player == 'gajah' ) return ( comp == 'orang' ) ? 'MENANG!' : 'KALAH!';
     if( player == 'orang' ) return ( comp == 'gajah' ) ? 'KALAH!' : 'MENANG!';
-    if( player == 'semut' ) return ( comp == 'orang' ) ? 'KALAH' : 'MENANG!';
+    if( player == 'semut' ) return ( comp == 'orang' ) ? 'KALAH!' : 'MENANG!';
     
 
 }
@@ -36,6 +36,9 @@ function putar(){
 
 const pilihan = document.querySelectorAll('li img')
 
+let scorePlayer = 0
+let scoreComp = 0
+
 pilihan.forEach(function(i){
     i.addEventListener('click',function(){
     const pilihanComputer = getPilihanComputer()
@@ -43,9 +46,20 @@ pilihan.forEach(function(i){
     const hasil = getHasil(pilihanComputer, pilihanPlayer)
 
     
+    
     putar()
     
         setTimeout(function(){
+
+            if(hasil == 'MENANG!') scorePlayer++
+            
+            else if (hasil == 'KALAH!') scoreComp++
+
+            const scoreP = document.querySelector('.score-player')
+            scoreP.innerHTML = 'Score Player : ' + scorePlayer
+
+            const scoreC = document.querySelector('.score-comp')
+            scoreC.innerHTML = 'Score Computer : ' + scoreComp
 
             const imgComputer = document.querySelector('.img-komputer')
             imgComputer.setAttribute('src', 'img/' + pilihanComputer + '.png')
@@ -57,44 +71,5 @@ pilihan.forEach(function(i){
     })
 })
 
-
-// const pGajah = document.querySelector('.gajah')
-// pGajah.addEventListener('click', function(){
-//     const pilihanComputer = getPilihanComputer()
-//     const pilihanPlayer = pGajah.className
-//     const hasil = getHasil(pilihanComputer, pilihanPlayer)
-
-//     const imgComputer = document.querySelector('.img-komputer')
-//     imgComputer.setAttribute('src', 'img/' + pilihanComputer + '.png')
-
-//     const info = document.querySelector('.info')
-//     info.innerHTML = hasil
-// })
-
-// const pOrang = document.querySelector('.orang')
-// pOrang.addEventListener('click', function(){
-//     const pilihanComputer = getPilihanComputer()
-//     const pilihanPlayer = pOrang.className
-//     const hasil = getHasil(pilihanComputer, pilihanPlayer)
-
-//     const imgComputer = document.querySelector('.img-komputer')
-//     imgComputer.setAttribute('src', 'img/' + pilihanComputer + '.png')
-
-//     const info = document.querySelector('.info')
-//     info.innerHTML = hasil
-// })
-
-// const pSemut = document.querySelector('.semut')
-// pSemut.addEventListener('click', function(){
-//     const pilihanComputer = getPilihanComputer()
-//     const pilihanPlayer = pSemut.className
-//     const hasil = getHasil(pilihanComputer, pilihanPlayer)
-
-//     const imgComputer = document.querySelector('.img-komputer')
-//     imgComputer.setAttribute('src', 'img/' + pilihanComputer + '.png')
-
-//     const info = document.querySelector('.info')
-//     info.innerHTML = hasil
-// })
 
 
