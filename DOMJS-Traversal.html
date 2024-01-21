@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM Traversal</title>
+    <link rel="stylesheet" type="text/css" href="DOMJS-Traversal.css">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="card">
+      <img src="img/profile.png" width="96" height="96">
+      <span class="nama">Sandhika Galih</span>
+      <span class="telp">08123456789</span>
+      <a class="close" href="">×</a>
+    </div> 
+
+    <div class="card">
+      <img src="img/profile1.jpg" width="96" height="96">
+      <span class="nama">Rizmna</span>
+      <span class="telp">08123456789</span>
+      <a class="close" href="">×</a>
+    </div> 
+
+    <div class="card">
+      <img src="img/profile2.png" width="96" height="96">
+      <span class="nama">Ibnu</span>
+      <span class="telp">08123456789</span>
+      <a class="close" href="">×</a>
+    </div> 
+
+    <div class="card">
+      <img src="img/profile3.jpg" width="96" height="96">
+      <span class="nama">Sumari </span>
+      <span class="telp">08123456789</span>
+      <a class="close" href="">×</a>
+    </div> 
+
+</div>
+
+<script>
+    // const card = document.querySelector('.card')
+
+    // const close = document.querySelector('.close')
+    // close.addEventListener('click', function(){
+    //     card.remove()
+    // })
+
+
+    //DOM Traversal
+    const close = document.querySelectorAll('.close')
+
+
+    //cara ke 1
+    // for(let i = 0; i < close.length; i++){
+    //     close[i].addEventListener('click', function(e){
+    //        e.target.parentElement.style.display = 'none'
+    //     })
+    // } 
+
+    close.forEach(function(i)  {
+      i.addEventListener('click', function(e){
+        e.target.parentElement.style.display = 'none'
+        e.preventDefault()
+        e.stopPropagation()
+      })  
+    });
+
+    const cards = document.querySelectorAll('.card')
+    cards.forEach(function(card){
+      card.addEventListener('click', function(e){
+        alert('ok')
+      })
+    })
+
+    const nama = document.querySelector('.nama')
+    console.log(nama.nextElementSibling.nextElementSibling)
+
+</script>
+</body>
+</html>
