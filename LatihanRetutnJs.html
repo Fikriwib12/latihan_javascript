@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan Return Js</title>
+</head>
+<body>
+   <script>
+    function sayHello(firstName, lastName){
+        const say = `Hallo ${firstName} ${lastName}`
+        return say
+    }
+
+    
+    const hasil = sayHello('Fikri', 'Wibowo')
+    document.writeln(`<p>${hasil}</p>`)
+
+
+    function getFinalValue(value){
+        if(value > 90){
+            return 'A'
+        }
+        else if(value > 80){
+            return 'B'
+        }
+        else if(value > 70){
+            return 'C'
+        }
+        else if(value > 60){
+            return 'D'
+        }
+        else{
+            return 'E'
+        }
+    }
+
+    const result = getFinalValue(100)
+    document.writeln(`<p>${result}</p>`)
+
+    function isContain(array, searchValue){
+        for(const element of array){
+            console.info(`iterasi element ${element}`)
+            if(element === searchValue){
+                return true
+            }
+        }
+        return false
+    }
+
+    const array = [1,2,4,5,9,8,7]
+    const search = 8
+
+    const found = isContain(array, search)
+    document.writeln(`<p>${found}</p>`)
+   </script> 
+</body>
+</html>

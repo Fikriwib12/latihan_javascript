@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rest Parameter</title>
+</head>
+<body>
+    <script>
+        function sum(name, ...data){
+            let total = 0
+            for(const i of data){
+                total += i
+            }
+            document.writeln(`<p>Ini ${name} dan ini ${total}</p>`)
+        }
+
+        sum('fikri', 1,2,3)
+
+
+        const values = [10,10,10,10,10]
+        sum('Fikri', ...values)
+
+
+        function oldSum(){
+            let total= 0
+            for(const argumen of arguments){
+                total += argumen
+                document.writeln(`<p>This is total ${total}</p>`)
+            }
+        }
+
+        oldSum(1,2,3,4,5)
+    </script>
+</body>
+</html>
