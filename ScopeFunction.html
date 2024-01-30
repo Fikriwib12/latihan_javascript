@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Scope</title>
+</head>
+<body>
+    <script>
+        let counter = 0 // ini global scope
+
+        function hitme(){
+            counter++
+        }
+
+        function other(){
+            
+        }
+
+        hitme()
+        hitme()
+        console.info(counter)
+
+
+        function first(){
+            let firstValue = 'Value Pertama'
+            console.info(firstValue)
+
+            function firstNested(){
+                console.info(firstValue)
+                const firstNestedValue = 'first Nested Value'
+            }
+
+            firstNested()
+            console.info(firstNestedValue)//error tidak bisa ambil variable dari nested function
+        }
+
+        function second(){
+            let secondValue = 'Value Kedua'
+            console.info(secondValue)
+
+            console.info(firstValue)//error tidak bisa menerima local scope dari function lain
+        }
+
+        first()
+        second()
+
+        console.info(firstValue)//error tidak bisa memanggil local scope ke global
+        console.info(secondValue)//error tidak bisa memanggil local scope ke global
+    </script>
+</body>
+</html>

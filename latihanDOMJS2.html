@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan DOM JS 2</title>
+</head>
+<body>
+    <button id="klik1" onclick="ubahWarna()" onmouseover="ubahTxt()" onmouseout="defaultTxt()">Klik 1</button>
+
+    <button id="kliik2" onmouseover="showMyname()" onmouseout="changeColorName()">Klik 2</button>
+
+
+    <script>
+        const klik1 = document.getElementById('klik1')
+
+        klik1.style.padding = '8px'
+        klik1.style.backgroundColor = 'salmon'
+        klik1.style.border = 'none'
+        klik1.style.fontSize = '24px'
+        klik1.style.cursor = 'pointer'
+
+        function ubahWarna(){
+            klik1.style.backgroundColor = 'aqua'
+        }
+
+        function ubahTxt(){
+            klik1.innerText = 'ubah dong'
+        }
+
+        function defaultTxt(){
+            klik1.innerText = 'Klik 1'
+        }
+
+
+        const body = document.body
+
+        
+        function showMyname(){
+            const myName = document.createElement('p')
+            myName.classList.add('nama')
+            myName.innerText = 'Fikri Wibowo'
+            body.append(myName)
+
+        }
+
+        function changeColorName(){
+            const myName = document.querySelectorAll('p')
+            console.log(myName)
+            for(const myNames of myName){
+                myNames.style.color = 'salmon'
+            }
+        }
+    </script>
+</body>
+</html>
