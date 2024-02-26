@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Method</title>
+</head>
+<body>
+    <script>
+        
+        const person = {
+            name : 'Fikri',
+            sayHello : function(name){
+                alert(`hallo ${name}`)
+            }
+        }
+
+        person.sayHello('rizki')
+
+
+        const person2 = {
+            name : 'ridi'
+        }
+
+        person2.sayHello2 = function(name){
+            alert(`hallo ${name}`)
+        }
+
+        person2.sayHello2('budi')
+    </script>
+</body>
+</html>

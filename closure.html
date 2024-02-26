@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+</head>
+<body>
+    <script>
+        function outerFunction(){
+            let outerVariable = 'saya variabel di luar fungsi'
+
+            function innerFunction(){
+            console.log(outerVariable)
+            }
+
+            return innerFunction
+        }
+
+        const closureExample = outerFunction()
+        closureExample()
+
+
+        function createAdder(value){
+            const owner = 'Fikri'
+
+            function addParam(param){
+                console.info(owner)
+                return value + param
+            }
+            return addParam
+        }
+
+        const addTwo = createAdder(10)
+
+        console.info(addTwo(20))
+        
+    </script>
+</body>
+</html>
