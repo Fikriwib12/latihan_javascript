@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object Revesited</title>
+  </head>
+  <body>
+    <script>
+      // 1. Object Literal
+
+      //   const mahasiswa = {
+      //     nama: "rudi",
+      //     energi: 18,
+      //     makan: function (porsi) {
+      //       this.energi = this.energi + porsi;
+      //       console.log(`Selamat Datang ${this.nama}, selamat makan `);
+      //     },
+      //   };
+
+      //   2. Function Declaration Object
+
+      //   function Mahasiswa(nama, energi) {
+      //     let mahasiswa = {};
+      //     mahasiswa.nama = nama;
+      //     mahasiswa.energi = energi;
+
+      //     mahasiswa.makan = function (porsi) {
+      //       this.energi += porsi;
+      //       console.log(`Selamat Datang ${this.nama}, Selamat Makan`);
+      //     };
+
+      //     mahasiswa.main = function (jam) {
+      //       this.energi -= jam;
+      //       console.log(`Halo ${this.nama}, Selamat Bermain`);
+      //     };
+      //     return mahasiswa;
+      //   }
+
+      //   let fikri = Mahasiswa("fikri", 10);
+
+      //   3. Constructor Function
+      function Mahasiswa(nama, energi) {
+        this.nama = nama;
+        this.energi = energi;
+
+        this.makan = function (porsi) {
+          this.energi += porsi;
+          console.log(`Selamat Datang ${this.nama}, Selamat Makan`);
+        };
+
+        this.main = function (jam) {
+          this.energi -= jam;
+          console.log(`Halo ${this.nama}, Selamat Bermain`);
+        };
+      }
+
+      let fikri = new Mahasiswa("fikri", 19);
+    </script>
+  </body>
+</html>
