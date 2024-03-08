@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object Create</title>
+  </head>
+  <body>
+    <script>
+      const methodMahasiswa = {
+        makan: function (porsi) {
+          this.energi += porsi;
+          console.log(`Halo ${this.nama}, selamat makan!`);
+        },
+      };
+
+      function Mahasiswa(nama, energi) {
+        let mahasiswa = Object.create(methodMahasiswa);
+        mahasiswa.nama = nama;
+        mahasiswa.energi = energi;
+
+        return mahasiswa;
+      }
+
+      let fikri = Mahasiswa("fikri", 10);
+    </script>
+  </body>
+</html>
