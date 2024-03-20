@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Executuin Context Hoisting</title>
+  </head>
+  <body>
+    <script>
+      // 1.Biasakan deklarasi variabel terlebih dahulu sebelum dipanggil
+
+      //   console.log(nama);
+
+      //   var nama = "FIkri";
+
+      //   var nama = "Fikri";
+      //   var umur = 33;
+      //   console.log(sayHello());
+
+      //   function sayHello() {
+      //     return `Halo saya ${nama}, saya berumur ${umur}`;
+      //   }
+
+      // function dapat membuat local Execution Context dan execution phase yang didalamnya dari window, arguments, dan hoisting
+
+      var username = "@fikri_wib.";
+      var instagramURL = "https://instagram.com";
+
+      function linkIg() {
+        console.log(arguments);
+        return instagramURL + username;
+      }
+
+      console.log(linkIg("/@dody", "@gjghg"));
+
+      //   2. Nested Function
+
+      function a() {
+        console.log("a");
+
+        function b() {
+          console.log("b");
+
+          function c() {
+            console.log("c");
+          }
+          c();
+        }
+        b();
+      }
+      a();
+    </script>
+  </body>
+</html>

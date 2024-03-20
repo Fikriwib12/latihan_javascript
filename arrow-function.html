@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arrow Function</title>
+  </head>
+  <body>
+    <script>
+      const tampilNama = (nama) => `Halo nama saya ${nama}`;
+      console.log(tampilNama("Fikri")); // Jika didalam arrow function hanya ada satu parameter tidak perlu menggunakan kurung kurawal lagi didalam function
+
+      const salam = (waktu, nama) => {
+        return `Selamat ${waktu} ${nama}`;
+      };
+
+      console.log(salam("pagi", "fikri")); //Jika terdapat 2 parameter didalam function diwajibkan menggunakan kurung kurawal didalam function
+
+      const hello = () => {
+        return "Hello World";
+      };
+
+      console.log(hello()); //Jika tidak ada parameter didalam arrow function, diwajibkan menggunakan kurung kurawal didalam function
+
+      //CONTOH PENGGUNAAN ATAU IMPLEMENTASI ARROW FUNCTION
+
+      //   1. Menghitung jumlah huruf didalam Array
+      let mahasiswa = ["Fikri Wibowo", "Rudi", "Erik"];
+
+      let jmlHuruf = mahasiswa.map((nama) => nama.length);
+      console.log(jmlHuruf);
+
+      let jmlHurufObject = mahasiswa.map((nama) => ({
+        nama: nama,
+        JumlahHuruf: nama.length,
+      }));
+      console.table(jmlHurufObject); // Jika ingin mengembalikan nilai menjadi object gunakan kurung kurawal sebelum object
+    </script>
+  </body>
+</html>

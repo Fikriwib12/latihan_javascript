@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fiter Map & Reduce</title>
+  </head>
+  <body>
+    <script>
+      const angka = [-1, 8, 9, 1, 4, -5, -4, 3, 2, 9];
+
+      //mencari angka >= 3
+
+      //for
+      //   const newAngka = [];
+      //   for (let i = 0; i < angka.length; i++) {
+      //     if (angka[i] >= 3) {
+      //       newAngka.push(angka[i]);
+      //     }
+      //   }
+
+      //   console.log(newAngka);
+
+      //filter
+      //   const newAngka = angka.filter((i) => i >= 3);
+
+      //   console.log(newAngka);
+
+      //map
+      //kalikan 2 semua isi array angka menggunakan map
+      //   const newAngka = angka.map((i) => i * 2);
+      //   console.log(newAngka);
+
+      //   reduce
+      // jumalhkan semua elemen pada array angka
+      const newAngka = angka.reduce(
+        (accumulator, currentValue) => accumulator + currentValue,
+        0
+      ); //terdapat nilai default di akhir reduce yaitu 0, nilai itu bisa diubah sesuai kebutuhan
+      console.log(newAngka);
+    </script>
+  </body>
+</html>

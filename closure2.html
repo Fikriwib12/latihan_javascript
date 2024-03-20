@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Closure</title>
+  </head>
+  <body>
+    <script>
+      function init() {
+        // let nama = "smsms";
+        return function (nama) {
+          console.log(nama);
+        };
+      }
+      let panggilNama = init();
+      panggilNama("wibowo");
+      panggilNama("rama");
+
+      //   2. Membuat ucapan salam menggunakan closure
+      function ucapkanSalam(waktu) {
+        return function (nama) {
+          console.log(
+            `Halo ${nama}, Selamat ${waktu} Semoga Harimu Menyenangkan`
+          );
+        };
+      }
+
+      let selamatPagi = ucapkanSalam("Pagi");
+      let selamatSiang = ucapkanSalam("Siang");
+      let selamatMalam = ucapkanSalam("Malam");
+
+      selamatPagi("fikri");
+
+      // 3.Closure biasa digunakan untuk private function
+
+      // let counter = 0;
+
+      // let add = function () {
+      //   let counter = 0;
+      //   return function () {
+      //     return ++counter;
+      //   };
+      // }; Ini Private Function
+
+      // counter = 100;
+
+      // 3.1 Pemanggilan private function bisa dilakukan dengan memasukan outer function kedalam variabel
+      // let callAdd = add();
+
+      // console.log(callAdd());
+      // console.log(callAdd());
+      // console.log(callAdd());
+      // console.log(callAdd());
+
+      // 3.2   Pemanggilan private function bisa dilakukan dengan menggunakan immediately invoked function
+
+      let add = (function () {
+        let counter = 0;
+        return function () {
+          return ++counter;
+        };
+      })();
+
+      counter = 100;
+
+      console.log(add());
+      console.log(add());
+      console.log(add());
+    </script>
+  </body>
+</html>
