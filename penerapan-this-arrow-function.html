@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Penerapan This Pada Arrow Function</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .box {
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+        margin: 50px auto;
+        transition: 0.3s width, 0.3s height 0.3s, 0.3s margin-top 0.3s,
+          1s background-color;
+      }
+
+      .size {
+        width: 150px;
+        height: 150px;
+        margin-top: 25px;
+      }
+
+      .caption {
+        background-color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+
+    <script>
+      const box = document.querySelector(".box");
+      box.addEventListener("click", function () {
+        let that = this; // gunakan variabel ini jika pemanggilan this tidak menggunakan arrow function
+
+        let size = "size";
+        let caption = "caption";
+
+        if (this.classList.contains(size)) {
+          [size, caption] = [caption, size];
+        }
+        this.classList.toggle(size);
+        setTimeout(() => {
+          this.classList.toggle(caption);
+        }, 600); //ini salah satu contoh penggunaan arrow function pada fitur animasi menggunakan dom dengan menggunakan keyword this
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>This Pada Arrow Function</title>
+  </head>
+  <body>
+    <script>
+      // ini Penggunaan pada constructor function
+
+      //   const mahasiswa = function () {
+      //     this.nama = "fikri";
+      //     this.umur = 23;
+      //     this.sayHello = function () {
+      //       console.log(
+      //         `Hallo nama saya ${this.nama}, dan saya berumur ${this.umur} tahun`
+      //       );
+      //     };
+      //   };
+
+      //   const fikri = new mahasiswa();
+
+      // arrow function tidak mengenal this/ tidak bisa digunakan pada pembuatan object lexical
+      //   const mhs1 = {
+      //     nama: "fikri",
+      //     umur: 22,
+      //     sayHello: () => {
+      //       console.log(
+      //         `Hallo nama saya ${this.nama}, dan saya berumur ${this.umur} tahun`
+      //       );
+      //     },
+      //   };
+
+      // constoh penggunaaan this pada arrow function
+      const mahasiswa = function () {
+        this.nama = "fikri";
+        this.umur = 23;
+        this.sayHello = function () {
+          console.log(
+            `Hallo nama saya ${this.nama}, dan saya berumur ${this.umur} tahun`
+          );
+        };
+
+        setInterval(() => {
+          if (this.umur <= 28) {
+            console.log(this.umur++);
+          }
+        }, 500); // this pada function ini akan mencari object di lexical scope bukan di global
+      };
+
+      const fikri = new mahasiswa();
+    </script>
+  </body>
+</html>
