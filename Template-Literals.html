@@ -1,100 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Template Literals</title>
-  </head>
-  <body>
-    <script>
-      //1.HTML Fragments
-      //   const mhs = {
-      //     nama: "Fikri Wibowo",
-      //     umur: 22,
-      //   };
 
-      //   const el = `  <div class="mhs">
-      //     <h2>${mhs.nama}</h2>
-      //     <p>${mhs.umur}</p>
-      // </div> `;
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Template Literals</title>
+</head>
 
-      //   document.body.innerHTML = el;
+<body>
+  <script>
+    //1.HTML Fragments
+    //   const mhs = {
+    //     nama: "Fikri Wibowo",
+    //     umur: 22,
+    //   };
 
-      //2.looping or maping
+    //   const el = `  <div class="mhs">
+    //     <h2>${mhs.nama}</h2>
+    //     <p>${mhs.umur}</p>
+    // </div> `;
 
-      //   const mhs = [
-      //     {
-      //       nama: "Fikri wibowo",
-      //       email: "FIkri@email.com",
-      //     },
-      //     {
-      //       nama: " DOdi",
-      //       email: "DOdi@email.com",
-      //     },
-      //     {
-      //       nama: " Erik",
-      //       email: "Erik@email.com",
-      //     },
-      //   ];
+    //   document.body.innerHTML = el;
 
-      //   const el = ` <div class="mhs">
-      //     ${mhs
-      //       .map(
-      //         (m) => `
-      //         <ul>
-      //     <li>${m.nama}</li>
-      //     <li>${m.email}</li>
-      //   </ul> `
-      //       )
-      //       .join("")}
+    //2.looping or maping
 
-      // </div>`;
+    //   const mhs = [
+    //     {
+    //       nama: "Fikri wibowo",
+    //       email: "FIkri@email.com",
+    //     },
+    //     {
+    //       nama: " DOdi",
+    //       email: "DOdi@email.com",
+    //     },
+    //     {
+    //       nama: " Erik",
+    //       email: "Erik@email.com",
+    //     },
+    //   ];
 
-      //   document.body.innerHTML = el;
+    //   const el = ` <div class="mhs">
+    //     ${mhs
+    //       .map(
+    //         (m) => `
+    //         <ul>
+    //     <li>${m.nama}</li>
+    //     <li>${m.email}</li>
+    //   </ul> `
+    //       )
+    //       .join("")}
 
-      //3.conditional
+    // </div>`;
 
-      // const lagu = {
-      //   judul: "tetap dalam jiwa",
-      //   penyanyi: "isyana sarasvati",
-      //   // feat: "Ray",
-      // };
+    //   document.body.innerHTML = el;
 
-      // const el = `<div>
-      //   <ul>
-      //       <li>${lagu.judul}</li>
-      //       <li>${lagu.penyanyi} ${lagu.feat ? `feat ${lagu.feat}` : ""}</li>
-      //       </ul>
-      //   </div>`;
+    //3.conditional
 
-      // document.body.innerHTML = el;
+    // const lagu = {
+    //   judul: "tetap dalam jiwa",
+    //   penyanyi: "isyana sarasvati",
+    //   // feat: "Ray",
+    // };
 
-      //4. Nested
-      const mhs = {
-        nama: "Fikri",
-        semester: 5,
-        matakuliah: [
-          "Rekayasa Web",
-          "Web Programming",
-          "Program Sistem Interaktif",
-          "Data Wwarehouse",
-        ],
-      };
+    // const el = `<div>
+    //   <ul>
+    //       <li>${lagu.judul}</li>
+    //       <li>${lagu.penyanyi} ${lagu.feat ? `feat ${lagu.feat}` : ""}</li>
+    //       </ul>
+    //   </div>`;
 
-      function cetakMatakuliah(matakuliah) {
-        return `<ol>
+    // document.body.innerHTML = el;
+
+    //4. Nested
+    const mhs = {
+      nama: "Fikri",
+      semester: 5,
+      matakuliah: [
+        "Rekayasa Web",
+        "Web Programming",
+        "Program Sistem Interaktif",
+        "Data Wwarehouse",
+      ],
+    };
+
+    function cetakMatakuliah(matakuliah) {
+      return `<ol>
           ${matakuliah.map((mk) => `<li>${mk}</li>`).join("")}
           
           </ol>`;
-      }
-      const el = `<div class = 'mhs'>
+    }
+    const el = `<div class = 'mhs'>
         <h2>${mhs.nama}</h2>
         <span class = 'smt'>Semester ${mhs.semester}</span>
         <h4>Mata Kuliah</h4>
         ${cetakMatakuliah(mhs.matakuliah)}
         </div>`;
 
-      document.body.innerHTML = el;
-    </script>
-  </body>
+    const tes = ``
+    document.body.innerHTML = el;
+  </script>
+</body>
+
 </html>

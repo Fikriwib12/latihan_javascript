@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Tagged Template Literals</title>
+    <style>
+      .hl {
+        background-color: salmon;
+      }
+    </style>
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      /*1.tagged template literals*/
+      // const nama = "Fikri";
+      // const umur = 25;
+
+      // function coba(strings, ...values) {
+      //   // 1.1 cara manual
+      //   // let result = ''
+      //   // strings.forEach((str, i)=> {
+      //   //   result+= `${str} ${values[i] || ''}`})
+      //   // return result
+      //   // 1.2 menggunakan reduce
+      //   return strings.reduce(
+      //     (result, str, i) => `${result}${str}${values[i] || ""}`,
+      //     ""
+      //   );
+      // }
+
+      // const str = coba`Halo nama saya ${nama}, umur saya ${umur}`;
+      // console.log(str);
+
+      // 2. Highlight
+      const nama = "Fikri";
+      const umur = 25;
+      const email = "fikri@gmail.com";
+      function highlight(strings, ...values) {
+        return strings.reduce(
+          (result, str, i) =>
+            `${result}${str}<span class="hl">${values[i] || ""}</span>`,
+          ""
+        );
+      }
+
+      const str = highlight`Halo nama saya ${nama}, umur saya ${umur}, dan email saya adalah ${email}`;
+      console.log(str);
+
+      document.body.innerHTML = str;
+    </script>
+  </body>
+</html>
