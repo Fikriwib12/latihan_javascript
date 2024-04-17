@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Destructuring Function</title>
+  </head>
+  <body>
+    <script>
+      //Desctructuring function array
+
+      // function kalkulasi(a, b) {
+      //   return [a + b, a * b, a - b, a / b];
+      // }
+
+      //untuk mendestructuring function pada array pastikan urutaannya sesuai, agar hasilnya tepat seperti yang kita inginkan.
+      // const [tambah, kali, kurang, bagi] = penjumlahanPerkalian(2, 3);
+      // console.log(tambah);
+
+      //Desctructuring object
+      // function kalkulasi(a, b) {
+      //   return {
+      //     tambah: a + b,
+      //     kurang: a - b,
+      //     kali: a * b,
+      //     bagi: a / b,
+      //   };
+      // }
+      //nama variabel pada desctrututring object harus sesuai dengan properti objectnya
+      // const { tambah, kurang, kali, bagi } = kalkulasi(2, 3);
+
+      // console.log(tambah);
+
+      //Desctrecturing function argumen pada object
+      const mhs = {
+        nama: "fikri",
+        umur: 23,
+        nilai: {
+          tugas: 80,
+          uts: 90,
+          uas: 80,
+        },
+      };
+
+      //jika ada object bersarang, lakukan destruct di variabel yang properti objectnya bersarang.
+      function ceteakMhs({ nama, umur, nilai: { tugas, utas, uas } }) {
+        return `Halo nama saya ${nama} umur saya ${umur} dan nilai saya ${uas}`;
+      }
+
+      console.log(ceteakMhs(mhs));
+    </script>
+  </body>
+</html>
