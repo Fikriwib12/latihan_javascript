@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spread Operator</title>
+  </head>
+  <body>
+    <script>
+      //menggabungkan 2 array atau lebih
+      //   const mhs = ["fikri", "budi", "budah"];
+      //   const dosen = ["risma", "wahyu", "wulan"];
+
+      //   const orang = [...mhs, "juma", ...dosen];
+
+      //   console.log(orang);
+
+      // mengcopy array
+      const mhs = ["fikri", "budi", "joko"];
+      //   const mhs1 = mhs; Jangan lakukan cara ini untuk mengcopy array. Dikarenakan jika kita ingin merubah value array pada variabel baru , value pada array awalnya akan ikut berubah
+      //   mhs1[0] = "fajar";
+      //   console.log(mhs);
+
+      //copy array gunakan spread operator
+      const mhs1 = [...mhs];
+      mhs1[0] = "fajar"; //ubah value array mhs1 indeks 0
+      console.log(mhs); //array awal value nya akan sama atau tidakk berubah
+      console.log(mhs1); //array pada variabel baru valuenya berubah
+    </script>
+  </body>
+</html>

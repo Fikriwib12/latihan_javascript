@@ -1,65 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>forEach vs for of vs for in</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <ul>
-        <li class="nama">fikri</li>
-        <li class="nama">budi</li>
-        <li class="nama">ridwan</li>
+      <li class="nama">fikri</li>
+      <li class="nama">budi</li>
+      <li class="nama">ridwan</li>
     </ul>
     <script>
-        //forEach
-        // const mhs = ['fikri', 'budi', 'firman']
+      //forEach
+      // const mhs = ['fikri', 'budi', 'firman']
 
-        // mhs.forEach(m => console.log(m))
+      // mhs.forEach(m => console.log(m))
 
+      //for of array
+      // const mhs = ['fikri', 'budi', 'firman']
 
-        //for of array
-        // const mhs = ['fikri', 'budi', 'firman']
+      // for (const m of mhs) {
+      //     console.log(m)
+      // }
 
-        // for (const m of mhs) {
-        //     console.log(m)
-        // }
+      //for of string
+      // const nama = 'fikri'
+      // for (const n of nama) {
+      //     console.log(n)
+      // }
 
+      //forEach, mengetahui index pada array tambahkan i atau value lainnya pada parameter
+      // const mhs = ['fikri', 'budi', 'firman']
+      // mhs.forEach((m, i) => {
+      //     console.log(`${m} adalah mahasiswa ke-${i}`)
+      // });
 
-        //for of string
-        // const nama = 'fikri'
-        // for (const n of nama) {
-        //     console.log(n)
-        // }
+      //for of, mengetahui index pada array dengan menggunakan method entries() dan melakukan desctructuring pada variabel for of. variabel pertama untuk index array dan variabel ke 2 untuk value array nya.
+      // const mhs = ['fikri', 'budi', 'firman']
+      // for (const [i, m] of mhs.entries()) {
+      //     console.log(`${m} adalah mahasiswa ke-${i}`)
+      // }
 
+      //forEach pada nodelist
+      // const listNama = document.querySelectorAll('.nama')
+      // console.log(listNama)
+      // listNama.forEach(n => { console.log(n.innerHTML) })
 
-        //forEach, mengetahui index pada array tambahkan i atau value lainnya pada parameter
-        // const mhs = ['fikri', 'budi', 'firman']
-        // mhs.forEach((m, i) => {
-        //     console.log(`${m} adalah mahasiswa ke-${i}`)
-        // });
+      //for of pada nodelist
+      // const listNama = document.querySelectorAll('.nama')
+      // for (const n of listNama) {
+      //     console.log(n.innerHTML)
+      // }
 
-        //for of, mengetahui index pada array dengan menggunakan method entries() dan melakukan desctructuring pada variabel for of. variabel pertama untuk index array dan variabel ke 2 untuk value array nya.
-        // const mhs = ['fikri', 'budi', 'firman']
-        // for (const [i, m] of mhs.entries()) {
-        //     console.log(`${m} adalah mahasiswa ke-${i}`)
-        // }
+      //for of arguments
+      //   function jumalahAngka() {
+      //     let jumlah = 0;
+      //     for (const a of arguments) {
+      //       jumlah += a;
+      //     }
+      //     return jumlah;
+      //   }
 
-        //forEach pada nodelist
-        // const listNama = document.querySelectorAll('.nama')
-        // console.log(listNama)
-        // listNama.forEach(n => { console.log(n.innerHTML) })
+      //   console.log(jumalahAngka(1, 2, 3, 4, 5));
 
-        //for of pada nodelist
-        const listNama = document.querySelectorAll('.nama')
-        for (const n of listNama) {
-            console.log(n.innerHTML)
-        }
+      //for in object
 
+      const mhs = {
+        nama: "fikri",
+        nim: 1818181,
+      };
 
+      for (const m in mhs) {
+        console.log(m);
+      }
     </script>
-</body>
-
+  </body>
 </html>
