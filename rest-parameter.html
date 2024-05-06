@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rest Parameter</title>
+</head>
+
+<body>
+    <script>
+        // rest parameter
+        // rest parameter bisa ditempatkan diakhir normal parameter atau gunakan hanya rest parameter
+        // function myFunc(a, b, ...myArgs) {
+        //     return `a = ${a}, b = ${b} dan myArgs = ${myArgs}`
+        // }
+
+        // console.log(myFunc(1, 2, 3, 4, 5))
+
+
+        // penjumlahan menggunakan rest parameter
+        // function jumlahkan(...angka) {
+        //     // let total = 0
+        //     // menggunakan for of
+        //     // for (const angkas of angka) {
+        //     //     total += angkas
+        //     // }
+        //     // return total
+
+        //     //menggunakan high order function
+        //     return angka.reduce((a, b) => a + b)
+        // }
+
+        // console.log(jumlahkan(1, 2, 3, 4))
+
+
+        // array desctructuring menggunakan rest parameter
+        // const kelompok1 = ['fikri', 'kurniawan', 'mega', 'wati']
+
+        // const [ketua, wakilKetua, ...anggota] = kelompok1
+        // console.log(anggota)
+
+
+        //object desctructuring
+        // const team = {
+        //     pm: 'fikri',
+        //     Fe: 'ridwan',
+        //     Be: 'kurniawan',
+        //     Ux: 'risman'
+        // }
+
+        // const { pm, ...tim } = team
+
+        // console.log(tim)
+
+
+        function filterBy(types, ...values) {
+            return values.filter(v => typeof v === types)
+        }
+
+        console.log(filterBy('boolean', 1, 2, 'fikri', true, 10, 'risman'))
+    </script>
+</body>
+
+</html>
