@@ -1,0 +1,20 @@
+[
+  {
+    "nama": "Fikri",
+    "nim": "1111",
+    "jurusan": "SI",
+    "idDosenWali": 1
+  },
+  {
+    "nama": "Risman",
+    "nim": "1112",
+    "jurusan": "TI",
+    "idDosenWali": 2
+  },
+  {
+    "nama": "Budi",
+    "nim": "1113",
+    "jurusan": "SI",
+    "idDosenWali": 2
+  }
+]
