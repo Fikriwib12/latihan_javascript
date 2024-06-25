@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+</head>
+
+<body>
+    <script>
+        function Person(firstName, lastName) {
+            this.firstName = firstName
+            this.lastName = lastName
+            this.sayHello = function (name) {
+                console.info(`Halo ${name} nama saya ${this.firstName}`)
+            }
+        }
+
+        Person.prototype.sayBye = function () {
+            console.info('Bye')
+        } // untuk menambahkan method baru bisa melalui prototypr dengan format sintaks ini
+
+        Person.prototype.run = function () {
+            console.info(`${this.firstName} is running`)
+        }
+
+        const fikri = new Person('fikri', 'wibowo')
+        fikri.sayBye = function () {
+            console.info('sampai jumpa') // jika di dalam object ada method yang sama dengan constructor function javascript akan mengambil method yang ada di dalam object terlebih dahulu
+        }
+
+        const budi = new Person('budi', 'nugraha')
+
+        console.log(fikri)
+        console.log(budi)
+
+        fikri.sayBye()
+        fikri.run()
+    </script>
+</body>
+
+</html>
