@@ -1,32 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Object</title>
 </head>
+
 <body>
     <script>
-        function Person(){
-            this.firstName = '' // ini adalah prototype
-            this.lastName = ''
-            this.sayHello = function(name){
+        function Person(firstName, lastName) { // bisa juga gunakan parameter di constructor function
+            this.firstName = firstName // ini adalah prototype
+            this.lastName = lastName
+            this.sayHello = function (name) {
                 console.info(`Halo ${name} nama saya ${this.firstName}`)
             }
         } //Jika ingin membuat contructor function biasakan gunakan huruf besar diawal
 
 
-        const fikri = new Person() // untuk membuat object bisa gunakan kata new sebelum function
-        fikri.firstName = 'fikri' // untuk menambahkan value pada properti object
-        fikri.lastName = 'wibowo'
+        const fikri = new Person('fikri', 'wibowo') // bisa juga gunakan parameter di constructor function // untuk membuat object bisa gunakan kata new sebelum function
+        // fikri.firstName = 'fikri' // untuk menambahkan value pada properti object
+        // fikri.lastName = 'wibowo'
         fikri.sayHello('Joko')
-        const budi = new Person() // untuk membuat object bisa gunakan kata new sebelum function
-        budi.firstName = 'budi'
-        budi.lastName = 'nugra'
+        const budi = new Person('budi', 'nugraha') // untuk membuat object bisa gunakan kata new sebelum function
+        // budi.firstName = 'budi'
+        // budi.lastName = 'nugra'
         budi.sayHello('Joko')
 
         console.log(fikri)
         console.log(budi)
     </script>
 </body>
+
 </html>
