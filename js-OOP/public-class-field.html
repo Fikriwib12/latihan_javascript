@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Public class field</title>
+  </head>
+  <body>
+    <script>
+      class Customer {
+        firstName;
+        lastName;
+        balance = 0; // ini adalah field biasanya field ditaruh diatas ditengah ada constructor dan paling bawah ada method
+
+        constructor(firstName, lastName) {
+          // field juga bisa diubah didalam constructor
+          this.firstName = firstName;
+          this.lastName = lastName;
+        }
+
+        sayHello() {}
+      }
+
+      const fikri = new Customer("fikri", "wibowo");
+      console.info(fikri);
+
+      const budi = new Customer();
+      budi.firstName = "budi"; // field pada class berada di instance object, jadi jika field diubah di salah satu instance object, pada object lain nilainya akan tetap sama dengan parentnya jika tidak diubah
+
+      console.info(budi);
+    </script>
+  </body>
+</html>
