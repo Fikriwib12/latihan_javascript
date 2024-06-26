@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Method</title>
+</head>
+
+<body>
+    <script>
+        class Person {
+            constructor(name) { // di dalam class juga bisa menambahkan constructor dan parameter
+                this.name = name // di dalam class juga bisa menambahkan property
+            }
+
+            sayHello(name) { //di dalam class juga bisa menambahkan method seperti ini
+                console.info(`Hello ${name} my name is ${this.name}`)
+            }
+        }
+
+        const fikri = new Person('fikri')
+        console.info(fikri)
+        fikri.sayHello('joko')
+        const budi = new Person('budi')
+        console.info(budi)
+        budi.sayHello('joko')
+    </script>
+</body>
+
+</html>
