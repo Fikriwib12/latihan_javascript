@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Inheritance</title>
+</head>
+
+<body>
+    <script>
+        class Employee {
+            // constructor(name) {
+            //     this.name = name
+            // }
+
+            sayHello(name) {
+                console.info(`hello ${name} my name is Employee ${this.name}`)
+            }
+        }
+
+        class Manager extends Employee { //Class bisa melakukan pewarisan dengan menggunakan kata kunci extends
+            // constructor(name) {
+            //     this.name = name
+            // }
+
+            sayHello(name) {
+                console.info(`hello ${name} my name is Employee ${this.name}`)
+            }
+        }
+
+        const fikri = new Employee()
+        fikri.name = 'fikri'
+        fikri.sayHello("joko")
+
+        const budi = new Manager()
+        budi.name = 'Budi'
+        budi.sayHello("joko")
+
+        console.info(fikri)
+        console.info(budi)
+
+    </script>
+</body>
+
+</html>

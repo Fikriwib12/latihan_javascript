@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Constructor</title>
+</head>
+
+<body>
+    <script>
+        class Employee {
+            constructor(firstName) {
+                this.firstName = firstName
+            }
+
+            sayHello(name) {
+                console.info(`hello ${name} my name is Employee ${this.firstName}`)
+            }
+        }
+
+        class Manager extends Employee { //Class bisa melakukan pewarisan dengan menggunakan kata kunci extends
+            constructor(firstName, lastName) { // jika ingin mewari constructor wajib memanggil super constructor dengan menggunakan kata kunci super
+                super(firstName)
+                this.lastName = lastName
+            }
+
+            sayHello(name) {
+                console.info(`hello ${name} my name is Manager ${this.firstName} ${this.lastName}`)
+            }
+        }
+
+        const fikri = new Employee("fikri")
+        fikri.sayHello("joko")
+
+        const budi = new Manager("budi", "budiman")
+        // budi.name = 'Budi'
+        budi.sayHello("joko")
+
+        console.info(fikri)
+        console.info(budi)
+    </script>
+</body>
+
+</html>
