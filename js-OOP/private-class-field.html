@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Private Class field</title>
+  </head>
+  <body>
+    <script>
+      class Counter {
+        #counter = 0; // untuk menambhakan private class bisa tambahkan #
+
+        increment() {
+          this.#counter++;
+        }
+
+        decrement() {
+          this.#counter--;
+        }
+
+        get() {
+          return this.#counter;
+        }
+      }
+
+      const counter = new Counter();
+      for (let i = 0; i < 20; i++) {
+        counter.increment(); // jika ingin memanggil, panggil menggunakan method nya
+      }
+
+      console.info(counter);
+
+      class Nama {
+        // contoh private class 2
+        #nama = "";
+
+        changeName(name) {
+          this.#nama = name;
+        }
+      }
+
+      const nama = new Nama();
+      //   nama.nama = "fikri";
+      nama.changeName("fikri");
+
+      console.info(nama);
+    </script>
+  </body>
+</html>
