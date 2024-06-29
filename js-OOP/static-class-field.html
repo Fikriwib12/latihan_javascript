@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Static Class Field</title>
+  </head>
+  <body>
+    <script>
+      class Configuration {
+        static name = "Belajar JS OOP"; // static disini berfungsi agar field tidak bisa diakses diluar class
+        static version = 1.0;
+        static author = "Fikri";
+      }
+
+      const config = new Configuration(); //{}
+      console.info(config); // undifined
+
+      console.info(Configuration.name); // jika ingin akses static field bisa akses seperti ini seoerti pemanggilan variabel secara global
+      console.info(Configuration.version);
+      console.info(Configuration.author);
+
+      Configuration.author = "Fikri Wibowo"; // static field juga bisa diubah dengan cara seperti ini mirip dengan variabel global
+      console.info(Configuration.author);
+    </script>
+  </body>
+</html>

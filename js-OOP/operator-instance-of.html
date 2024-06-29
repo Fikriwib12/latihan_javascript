@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Operator Instance Of</title>
+  </head>
+  <body>
+    <script>
+      class Employe {}
+
+      class Manager extends Employe {}
+
+      const fikri = new Employe();
+      const budi = new Manager();
+
+      console.info(typeof fikri);
+      console.info(typeof budi);
+
+      console.info(fikri instanceof Employe); // untuk cek asal class dari object bisa gunakan operator instanceof lalu input nama class nya jika benar hasilnya true jika salah hasilnya false
+      console.info(fikri instanceof Manager);
+
+      console.info(budi instanceof Employe); // Di sini instanceof juga bisa digunakan untuk cek keturunan, pada kasus ini jika manager extends employee hasilnya true jika tidak extend hasilnya false
+      console.info(budi instanceof Manager); // untuk cek asal class dari object bisa gunakan operator instanceof lalu input nama class nya jika benar hasilnya true jika salah hasilnya false
+    </script>
+  </body>
+</html>
