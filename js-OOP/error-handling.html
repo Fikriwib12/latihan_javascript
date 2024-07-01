@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Error Handling</title>
+</head>
+
+<body>
+    <script>
+        class Mathutil {
+            static sum(...numbers) {
+                if (numbers.length === 0) {
+                    throw new Error("Total Parameter Harus Lebih Dari 0"); // gunakan throw new Error untuk memberi pesan error dan kode program akan berhenti
+                }
+                let total = 0;
+                for (const number of numbers) {
+                    total += number;
+                }
+                return total;
+            }
+        }
+        try {
+            console.info(Mathutil.sum())
+        }
+        catch (error) {
+            console.info(`Terjadi error: ${error.message}`)
+        } // jika ingin program berjalaan saat ada error pada method tertentu gunakan try & catch
+        finally {
+            console.info('program selesai')
+        } // finaly bisa ditambahkan jika ingin mengeksekusi sesuatu setalah try and catch
+
+        console.info('program tetap berjalan')
+
+
+        class Counter {
+            #counter = 0
+
+            next() {
+                try {
+
+                    return this.#counter
+                }
+
+                finally {
+
+                    this.#counter++
+                } // kata kunci try finally bisa dilakukan untuk kasus tertentu seperti ini
+            }
+        }
+
+        const counter = new Counter()
+        console.info(counter.next())
+        console.info(counter.next())
+        console.info(counter.next())
+        console.info(counter.next())
+        console.info(counter.next())
+
+
+    </script>
+</body>
+
+</html>

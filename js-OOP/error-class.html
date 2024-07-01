@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Error Handling Class</title>
+</head>
+
+<body>
+    <script>
+        class validationError extends Error {
+            constructor(message, field) {
+                super(message)
+                this.field = field
+            }
+        } // untuk membuat class error sendiri kita bisa melakukan extends pada parent class Error
+
+        class Mathutil {
+            static sum(...numbers) {
+                if (numbers.length === 0) {
+                    throw new validationError("Total Parameter Harus Lebih Dari 0", 'numbers'); // gunakan throw new Error untuk memberi pesan error dan kode program akan berhenti
+                }
+                let total = 0;
+                for (const number of numbers) {
+                    total += number;
+                }
+                return total;
+            }
+        }
+        try {
+            console.info(Mathutil.sum())
+        }
+        catch (error) {
+            if (error instanceof validationError) {
+
+                console.info(`Terjadi error di field ${error.field} dengan error: ${error.message}`)
+            } else {
+                console.info(`Terjadi error: ${error.message}`)
+            }
+        } // jika ingin program berjalaan saat ada error pada method tertentu gunakan try & catch
+        finally {
+            console.info('program selesai')
+        } // finaly bisa ditambahkan jika ingin mengeksekusi sesuatu setalah try and catch
+
+        console.info('program tetap berjalan')
+
+
+    </script>
+</body>
+
+</html>
