@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array</title>
+  </head>
+  <body>
+    <script>
+      {
+        const array = ["fikri", "wibowo"];
+
+        array.forEach(function (value, index) {
+          console.info(`${index} ${value}`);
+        });
+
+        array.forEach((value, index) => {
+          console.info(`${index} ${value}`);
+        });
+
+        array.forEach((value) => {
+          console.info(`${value}`);
+        });
+      }
+
+      {
+        // array queue
+
+        const queue = [];
+
+        queue.push("fikri"); // menambahkan value ke array
+        queue.push("wibowo");
+        queue.push("tatsumaki");
+
+        console.info(queue);
+
+        console.info(queue.shift()); // shift() digunakan untuk menghapus value array mulai dari yang paling depan atau yang pertama
+        console.info(queue.shift());
+        console.info(queue.shift());
+        console.info(queue.shift());
+
+        console.info(queue);
+      }
+
+      {
+        //array stack
+
+        const stack = [];
+
+        stack.push("fikri"); // menambahkan value ke array
+        stack.push("wibowo");
+        stack.push("tatsumaki");
+
+        console.info(stack);
+
+        console.info(stack.pop()); // pop() digunakan untuk menghapus value array mulai dari yang paling belakang atau yang terakhir
+        console.info(stack.pop());
+        console.info(stack.pop());
+        console.info(stack.pop());
+
+        console.info(stack);
+      }
+
+      {
+        //array search
+        const source = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5];
+
+        console.info(source.find((value) => value > 3));
+        console.info(source.findIndex((value) => value > 3));
+        console.info(source.includes(7));
+        console.info(source.indexOf(5));
+        console.info(source.lastIndexOf(5));
+      }
+      {
+        //array filter
+        const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        const ganjil = numbers.filter((value) => value % 2 === 1);
+        const genap = numbers.filter((value) => value % 2 === 0);
+
+        console.info(numbers);
+        console.info(genap);
+        console.info(ganjil);
+      }
+
+      {
+        //array tansform
+        const names = "Fikri Wibowo".split(" ");
+        console.info(names.map((value) => value.toUpperCase()));
+
+        const namesUpper = names.map((value) => value.toUpperCase());
+        console.info(namesUpper);
+
+        const namesReduce = names.reduce(
+          (before, value) => before + " " + value
+        );
+
+        console.info(namesReduce);
+
+        const namesRight = names.reduceRight(
+          (before, value) => before + " " + value
+        );
+
+        console.info(namesRight);
+
+        const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+        const total = numbers.reduce((before, value) => before + value);
+        console.info(total);
+      }
+    </script>
+  </body>
+</html>
