@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JSON</title>
+  </head>
+  <body>
+    <script>
+      const person = {
+        fisrtName: "Fikri",
+        middleName: "Wibowo",
+        lastName: "Tatsumaki",
+        addres: {
+          country: "Indonesia",
+          city: "jakarta",
+        },
+        hobbies: ["coding", "game", "traveling"],
+      };
+
+      const json = JSON.stringify(person);
+
+      console.info(json);
+
+      const jsonObject = JSON.parse(json);
+
+      console.info(jsonObject);
+    </script>
+  </body>
+</html>
