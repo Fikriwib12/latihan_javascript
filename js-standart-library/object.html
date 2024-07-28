@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object</title>
+  </head>
+  <body>
+    <script>
+      {
+        // object freeze dan seal
+        const person = {
+          firstName: "Fikri",
+          lastName: "Wibowo",
+        };
+
+        //   Object.freeze(person); // freeze pada object berfungsi agar value dalam onjek terkunci atau tidak bisa diubah dan dihapus
+        Object.seal(person); // seal pada object berfungsi agar value tidak bisa dihapus namun bisa diubah
+
+        person.firstName = "Budi";
+        person.middleName = "Tatsumaki";
+        delete person.lastName;
+
+        console.info(person);
+      }
+
+      {
+        // object assign
+
+        const target = {
+          firstName: "Fikri",
+        };
+
+        const source = {
+          lastName: "wibowo",
+        };
+
+        Object.assign(target, source); // copy attribute source ke dalam target, jika ada isi value yang sama targetnya akan dditimpa
+        console.info(target);
+        console.info(source);
+      }
+
+      {
+        //object property name & value
+
+        const person = {
+          firstName: "fikri",
+          lastName: "wibowo",
+        };
+
+        console.info(Object.values(person));
+        console.info(Object.getOwnPropertyNames(person));
+      }
+    </script>
+  </body>
+</html>
