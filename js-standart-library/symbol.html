@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>symbol</title>
+  </head>
+  <body>
+    <script>
+      {
+        // symbol digunakan agar elemen selalu unique
+        const firstName = Symbol("firstName");
+        const lastName = Symbol("lastName");
+
+        const person = {};
+        person[firstName] = "fikri";
+        person[lastName] = "wibowo";
+
+        console.info(person);
+      }
+
+      {
+        // penggunaan symbol tanpa deklarasi variabel, gunakan method Symbol.for()
+        console.info(Symbol.for("firstName") === Symbol.for("lastName")); // false
+
+        const person = {};
+        person[Symbol.for("firstName")] = "fikri";
+        person[Symbol.for("lastName")] = "wibowo";
+
+        console.info(person);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Set</title>
+  </head>
+  <body>
+    <script>
+      // set tidak akan menampilkan data yang duplikat
+      const set = new Set();
+
+      set.add("fikri");
+      set.add("fikri");
+      set.add("wibowo");
+      set.add("tatsumaki");
+
+      console.info(set);
+
+      set.forEach((value) => {
+        console.info(value);
+      });
+    </script>
+  </body>
+</html>

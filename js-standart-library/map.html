@@ -5,5 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Map</title>
   </head>
-  <body></body>
+  <body>
+    <script>
+      const map = new Map();
+      map.set("Name", "fikri wibowo");
+      map.set("Address", "Indonesia");
+
+      console.info(map);
+
+      console.info(map.get("Name"));
+      console.info(map.get("Address"));
+      console.info(map.get("Hobby"));
+
+      for (const element of map) {
+        console.info(element);
+      }
+
+      map.forEach((value, key) => {
+        console.info(`${key} : ${value}`);
+      });
+    </script>
+  </body>
 </html>
