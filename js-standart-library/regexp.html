@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RegExp</title>
+  </head>
+  <body>
+    <script>
+      {
+        // create regex
+        const regex1 = /fikri/;
+        const regex2 = new RegExp("fikri");
+        const regex3 = new RegExp(/fikri/);
+      }
+      {
+        // test regex
+
+        const name = "Fikri Wibowo Tatsumaki";
+        const regex = /Fikri/; // pencarian string bersifat case sensitive
+
+        const result = regex.exec(name);
+        console.info(result);
+
+        const test = regex.test(name);
+        console.info(test);
+        console.info(regex.test("tidak ada"));
+      }
+
+      {
+        //regex modifier
+
+        const name = "fikri wibowo\nFikri Wibowo\nFikri Tatsumaki";
+        const regex1 = /^fikri/gim; // untuk pencarian di regexp bisa gunakan format /value/type, jika ingin kata pertama saja gunakan tanda ^ /^value/, jika ingin kata pertama setiap baris tamabahkan m di type /^value/m
+        const regex2 = /wibowo/gi;
+
+        let result;
+        while ((result = regex1.exec(name)) !== null) {
+          console.info(result);
+        }
+        while ((result = regex2.exec(name)) !== null) {
+          console.info(result);
+        }
+      }
+
+      {
+        //advance regex
+        const regex = /ek[ioaeu]/gi;
+
+        const name = "eki eko eka eku eke edo eko eki";
+
+        let result;
+        while ((result = regex.exec(name)) !== null) {
+          console.info(result);
+        }
+      }
+
+      {
+        const name = "edo eki eko eka eku eke edo eko eki";
+
+        console.info(name.match(/ek[aiueo]/gi));
+        console.info(name.search(/ek[aiueo]/gi));
+        console.info(name.replace(/ek[aiueo]/i, "kamu"));
+        console.info(name.replaceAll(/ek[aiueo]/gi, "kamu"));
+        console.info(name.split(/e/gi));
+      }
+    </script>
+  </body>
+</html>

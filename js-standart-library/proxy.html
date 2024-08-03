@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proxy</title>
+  </head>
+  <body>
+    <script>
+      const target = {
+        middleName: "tatsumaki",
+      };
+
+      const handler = {
+        get: function (target, property) {
+          console.info(`Access property : ${property}`);
+          return target[property];
+        },
+        set: function (target, property, value) {
+          console.info(`Change property ${property} : ${value}`);
+          if (value == null) {
+            target[property] = "";
+          } else {
+            target[property] = value;
+          }
+        },
+      };
+
+      const proxy = new Proxy(target, handler);
+      proxy.firstName = "fikri";
+      proxy.lastName = null;
+
+      console.info(proxy.firstName);
+      console.info(proxy.middleName);
+      console.info(proxy.lastName);
+      console.info(target);
+    </script>
+  </body>
+</html>
