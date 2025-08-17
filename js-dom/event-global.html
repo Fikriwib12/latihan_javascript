@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Target</title>
+  </head>
+  <body>
+    <input type="button" id="clickMe" value="Click Me" />
+    <script>
+      const button = document.getElementById("clickMe");
+
+      button.onclick = function () {
+        button.setAttribute("value", "You Already Click Me");
+      };
+      button.onclick = function () {
+        console.log("saya di klik");
+      }; // jika menggunakan event global value pertama akan ditimpa pada value selanjutnya jika menulis event yang sama lebih dari satu kali
+    </script>
+  </body>
+</html>
