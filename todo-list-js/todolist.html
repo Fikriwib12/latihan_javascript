@@ -33,9 +33,23 @@
       <tbody>
         <tr>
           <td><input type="button" value="Done" /></td>
-          <td>Todo Descriptiom</td>
+          <td>Todo Description</td>
         </tr>
       </tbody>
     </table>
+
+    <script>
+      const todoList = [];
+      document.forms["todoForm"].onsubmit = function (event) {
+        event.preventDefault();
+
+        const todo = document.forms["todoForm"]["todo"].value;
+        todoList.push(todo);
+
+        document.forms["todoForm"].reset();
+
+        console.info(todoList);
+      };
+    </script>
   </body>
 </html>
