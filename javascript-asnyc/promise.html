@@ -6,21 +6,47 @@
     <title>Promise</title>
   </head>
   <body>
+    <table>
+      <tbody>
+        <tr>
+          <td>Id :</td>
+          <td id="id"></td>
+        </tr>
+        <tr>
+          <td>Product :</td>
+          <td id="product"></td>
+        </tr>
+        <tr>
+          <td>Price :</td>
+          <td id="price"></td>
+        </tr>
+      </tbody>
+    </table>
     <script>
-      const promise = new Promise(function (resolve, reject) {
-        const ajax = new XMLHttpRequest();
-        ajax.open("GET", "api/product.json");
-        ajax.onload = function () {
-          if (ajax.status === 200) {
-            resolve(ajax.responseText);
-          } else {
-            reject(`Error Get Product with response : ${ajax.responseText}`);
-          }
-        };
-        ajax.send();
-      });
+      function getProduct() {
+        return new Promise(function (resolve, reject) {
+          const ajax = new XMLHttpRequest();
+          ajax.open("GET", "api/product.json");
+          ajax.onload = function () {
+            if (ajax.status === 200) {
+              resolve(ajax.responseText);
+            } else {
+              reject(`Error Get Product with response : ${ajax.responseText}`);
+            }
+          };
+          ajax.send();
+        });
+      }
 
-      console.info(promise);
+      getProduct()
+        .then(function (response) {
+          return JSON.parse(response);
+        })
+        .then(function (json) {
+          document.getElementById("id").textContent = json.id;
+          document.getElementById("product").textContent = json.product;
+          document.getElementById("price").textContent = json.price;
+        });
     </script>
   </body>
 </html>
