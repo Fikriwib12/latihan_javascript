@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fetch Api</title>
+  </head>
+  <body>
+    <form>
+      <label for="username">
+        Username:
+        <input type="text" name="username" id="username" />
+      </label>
+      <br />
+      <label for="password">
+        Password:
+        <input type="password" name="password" id="password" />
+      </label>
+      <br />
+      <input type="button" value="login" id="login" />
+    </form>
+    <h1 id="response"></h1>
+
+    <script>
+      function doLogin() {
+        const request = new Request("api/salahjson", {
+          method: "POST",
+          headers: {
+            "Content-type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            username: document.getElementById("username").value,
+            password: document.getElementById("password").value,
+          }),
+        });
+        const response = fetch(request);
+
+        response
+          .then((response) => response.json())
+          .then(function (json) {
+            document.getElementById("response").textContent = json.about;
+          })
+          .catch(function (error) {
+            document.getElementById("response").textContent = error;
+          });
+      }
+
+      document.getElementById("login").onclick = doLogin;
+    </script>
+  </body>
+</html>
